@@ -15,3 +15,4 @@ $ docker info | grep Username
 $ curl -s "https://hub.docker.com/v2/repositories/<your-dockerhub-username>/<repo-name>/tags/" | jq -r '.results[].name'
 
 $ curl -s "https://hub.docker.com/v2/repositories/rger/flask-app/tags/" | jq -r '.results[].name'
+asd

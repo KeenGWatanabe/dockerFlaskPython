@@ -3,6 +3,9 @@ name: Docker Build and Push
 on:
   push:
     branches: [ "main" ]  # Trigger only on pushes to `main`
+env:
+  REGISTRY: docker.io
+  IMAGE_NAME: ${{ secrets.DOCKER_HUB_USERNAME }}/dockerflaskpython
 
 jobs:
   build-and-push:
@@ -26,6 +29,4 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/rger/flask-app:1.0  # Replace `your-repo`
-          # Optional: Add build context (e.g., `./` for Dockerfile in root)
-          # context: ./
-          # file: ./Dockerfile
+          

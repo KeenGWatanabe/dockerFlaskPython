@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]  # Trigger only on pushes to `main`
 env:
   REGISTRY: docker.io
-  IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/flask-app # this is your repo name
+  IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/flaskpython # this is your repo name
 
 jobs:
   build-and-push:
@@ -29,6 +29,6 @@ jobs:
         with:
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+            ${{ env.IMAGE_NAME }}:latest
+            ${{ env.IMAGE_NAME }}:${{ github.sha }}
                     
